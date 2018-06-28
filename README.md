@@ -1,7 +1,7 @@
 # PHP SMS Fetcher
 
 ![Minimal PHP version](https://img.shields.io/packagist/php-v/stajor/sms-fetcher.svg)
-[![Build Status](https://api.travis-ci.org/Stajor/sms-fetcher.svg?branch=master)](https://travis-ci.org/Stajor/telegram-bot)
+[![Build Status](https://api.travis-ci.org/Stajor/sms-fetcher.svg?branch=master)](https://travis-ci.org/Stajor/sms-fetcher)
 
 This PHP library will help you to fetch virtual and real phone numbers.
 These phone numbers are public phone numbers where you can receive SMS online from forums or social media platforms like: Yahoo, serverloft, CloudSigma, Amazon, NAVERLINE, OKru, RealStatus etc.
@@ -45,7 +45,7 @@ $provider->getNumbers();
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Stajor/telegram-bot. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Stajor/sms-fetcher. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
