@@ -3,7 +3,6 @@
 use PHPUnit\Framework\TestCase;
 use SMSFetcher\Client;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
-use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
 use SMSFetcher\Types\Number;
 
 class GetfreesmsnumberComTest extends TestCase {
