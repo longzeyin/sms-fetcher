@@ -2,11 +2,12 @@
 
 use PHPUnit\Framework\TestCase;
 use SMSFetcher\Client;
+use SMSFetcher\Providers\GetfreesmsnumberCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
 use SMSFetcher\Types\Number;
 
-class ReceiveSmsOnlineInfoTest extends TestCase {
-    protected static $name = 'receive-sms-online.info';
+class GetfreesmsnumberComTest extends TestCase {
+    protected static $name = 'getfreesmsnumber.com';
     protected static $provider;
     protected static $client;
     protected static $numbers;
@@ -19,11 +20,11 @@ class ReceiveSmsOnlineInfoTest extends TestCase {
 
     public function testInListProviders() {
         $this->assertArrayHasKey(self::$name, self::$client->getProviders());
-        $this->assertEquals(self::$client->getProviders()[self::$name], ReceiveSmsOnlineInfo::class);
+        $this->assertEquals(self::$client->getProviders()[self::$name], GetfreesmsnumberCom::class);
     }
 
     public function testHasProviderInstance() {
-        $this->assertInstanceOf(ReceiveSmsOnlineInfo::class, self::$provider);
+        $this->assertInstanceOf(GetfreesmsnumberCom::class, self::$provider);
     }
 
     public function testProviderGetters() {
@@ -40,6 +41,6 @@ class ReceiveSmsOnlineInfoTest extends TestCase {
         $this->assertNotEmpty($number->getCountry());
         $this->assertNotEmpty($number->getPhone());
         $this->assertNotEmpty($number->getUrl());
-        $this->assertGreaterThan(0, $number->getReceived());
+        $this->assertEmpty($number->getReceived());
     }
 }

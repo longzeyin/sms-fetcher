@@ -1,11 +1,13 @@
 <?php namespace SMSFetcher;
 
+use SMSFetcher\Providers\GetfreesmsnumberCom;
 use SMSFetcher\Providers\ProviderInterface;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
 
 class Client {
     protected $providers = [
-        'receive-sms-online.info' => ReceiveSmsOnlineInfo::class
+        'receive-sms-online.info'   => ReceiveSmsOnlineInfo::class,
+        'getfreesmsnumber.com'      => GetfreesmsnumberCom::class
     ];
 
     public function getProviders(): array {

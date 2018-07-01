@@ -2,24 +2,23 @@
 
 use SMSFetcher\Types\Number;
 
-class ReceiveSmsOnlineInfo extends Provider implements ProviderInterface {
-    const URL = 'https://www.receive-sms-online.info/';
+class GetfreesmsnumberCom extends Provider implements ProviderInterface {
+    const URL = 'https://getfreesmsnumber.com/';
 
     public function getNumbers() {
         $xpath  = $this->getXpath(self::URL);
         $data   = [];
 
         /** @var \DOMElement $node */
-        foreach ($xpath->query('//div[@class="Cell"]//div') AS $i => $node) {
-            $country    = $node->firstChild;
+        foreach ($xpath->query('//div[@class="nostyle"]') AS $i => $node) {
+            $country    = $node->firstChild->nextSibling->nextSibling;
             $phone      = $country->nextSibling->nextSibling;
-            $received   = explode(':', $phone->nextSibling->textContent);
+            $url        = $phone->nextSibling->nextSibling;
             $number     = new Number();
 
             $number->setPhone($phone->textContent);
             $number->setCountry($country->textContent);
-            $number->setUrl(self::URL.$phone->getAttribute('href'));
-            $number->setReceived(end($received));
+            $number->setUrl(self::URL.$url->getAttribute('href'));
 
             $data[] = $number;
         }
