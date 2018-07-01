@@ -42,6 +42,7 @@ $provider->getNumbers();
 
 ## Supported providers
 * receive-sms-online.info
+* getfreesmsnumber.com
 
 ## Contributing
 
