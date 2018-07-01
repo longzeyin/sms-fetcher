@@ -2,4 +2,4 @@
 
 $fetcher = new \SMSFetcher\Client();
 
-die(var_dump($fetcher->getProvider('smsreceive.eu')->getNumbers()));
+die(var_dump($fetcher->getProvider('receivesms.co')->getNumbers()));
