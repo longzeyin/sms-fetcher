@@ -1,5 +1,6 @@
 <?php namespace SMSFetcher;
 
+use SMSFetcher\Providers\FreeonlinephoneOrg;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
 use SMSFetcher\Providers\ProviderInterface;
 use SMSFetcher\Providers\ReceivesmsCo;
@@ -15,7 +16,8 @@ class Client {
         'smsreceive.eu'             => SmsreceiveEu::class,
         'receivesms.co'             => ReceivesmsCo::class,
         'sms-online.co'             => SmsOnlineCo::class,
-        'receive-sms-online.com'    => ReceiveSmsOnlineCom::class
+        'receive-sms-online.com'    => ReceiveSmsOnlineCom::class,
+        'freeonlinephone.org'       => FreeonlinephoneOrg::class
     ];
 
     public function getProviders(): array {
