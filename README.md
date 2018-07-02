@@ -45,6 +45,8 @@ $provider->getNumbers();
 * getfreesmsnumber.com
 * smsreceive.eu
 * receivesms.co
+* sms-online.co
+* receive-sms-online.com
 
 ## Contributing
 
