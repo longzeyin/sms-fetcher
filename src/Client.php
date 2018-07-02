@@ -8,6 +8,7 @@ use SMSFetcher\Providers\ReceiveSmsOnlineCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
 use SMSFetcher\Providers\SmsOnlineCo;
 use SMSFetcher\Providers\SmsreceiveEu;
+use SMSFetcher\Providers\SmsSellaiteCom;
 
 class Client {
     protected $providers = [
@@ -17,7 +18,8 @@ class Client {
         'receivesms.co'             => ReceivesmsCo::class,
         'sms-online.co'             => SmsOnlineCo::class,
         'receive-sms-online.com'    => ReceiveSmsOnlineCom::class,
-        'freeonlinephone.org'       => FreeonlinephoneOrg::class
+        'freeonlinephone.org'       => FreeonlinephoneOrg::class,
+        'sms.sellaite.com'          => SmsSellaiteCom::class
     ];
 
     public function getProviders(): array {

@@ -11,15 +11,16 @@ class ReceiveSmsOnlineInfo extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//div[@class="Cell"]//div') AS $i => $node) {
-            $country    = $node->firstChild;
-            $phone      = $country->nextSibling->nextSibling;
-            $received   = explode(':', $phone->nextSibling->textContent);
-            $number     = new Number();
+            $number = new Number();
 
-            $number->setPhone($phone->textContent);
-            $number->setCountry($country->textContent);
-            $number->setUrl(self::URL.$phone->getAttribute('href'));
-            $number->setReceived(end($received));
+            if ($node->childNodes->item(1)->nodeName == 'img') {
+                $node->removeChild($node->childNodes->item(1));
+            }
+
+            $number->setPhone($node->childNodes->item(2)->firstChild->nextSibling->textContent);
+            $number->setCountry($node->childNodes->item(0)->textContent);
+            $number->setUrl(self::URL.$node->childNodes->item(2)->getAttribute('href'));
+            $number->setReceived(preg_replace('/[^0-9]/', '', $node->childNodes->item(3)->textContent));
 
             $data[] = $number;
         }
