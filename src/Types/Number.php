@@ -23,7 +23,7 @@ class Number {
     }
 
     public function setCountry(string $country) {
-        $this->country = trim($country);
+        $this->country = trim(preg_replace('/[^\sA-Za-z]/', '', $country));
     }
 
     public function getCountry(): string {
