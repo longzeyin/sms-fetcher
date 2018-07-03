@@ -4,6 +4,7 @@ use SMSFetcher\Providers\FreeonlinephoneOrg;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
 use SMSFetcher\Providers\ProviderInterface;
 use SMSFetcher\Providers\ReceivesmsCo;
+use SMSFetcher\Providers\ReceiveSmsCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
 use SMSFetcher\Providers\SmsOnlineCo;
@@ -19,7 +20,8 @@ class Client {
         'sms-online.co'             => SmsOnlineCo::class,
         'receive-sms-online.com'    => ReceiveSmsOnlineCom::class,
         'freeonlinephone.org'       => FreeonlinephoneOrg::class,
-        'sms.sellaite.com'          => SmsSellaiteCom::class
+        'sms.sellaite.com'          => SmsSellaiteCom::class,
+        'receive-sms.com'           => ReceiveSmsCom::class
     ];
 
     public function getProviders(): array {

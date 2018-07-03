@@ -49,6 +49,7 @@ $provider->getNumbers();
 * receive-sms-online.com
 * freeonlinephone.org
 * sms.sellaite.com
+* receive-sms.com
 
 ## Contributing
 
