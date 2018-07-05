@@ -11,11 +11,11 @@ class SmsOnlineCo extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//div[@class="number-boxes-item"]') AS $i => $node) {
-            $number     = new Number();
+            $number = new Number();
 
-            $number->setPhone($node->childNodes->item(2)->textContent);
-            $number->setCountry($node->childNodes->item(4)->textContent);
-            $number->setUrl($node->childNodes->item(6)->getAttribute('href'));
+            $number->setPhone($node->getElementsByTagName('h4')->item(0)->textContent);
+            $number->setCountry($node->getElementsByTagName('h5')->item(0)->textContent);
+            $number->setUrl($node->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             $data[] = $number;
         }

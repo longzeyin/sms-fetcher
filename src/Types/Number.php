@@ -7,7 +7,7 @@ class Number {
     protected $received;
 
     public function setPhone(string $phone) {
-        $this->phone = preg_replace('/[^\+0-9]/', '', $phone);
+        $this->phone = preg_replace('/[^0-9]/', '', $phone);
     }
 
     public function getPhone(): string {
@@ -30,8 +30,8 @@ class Number {
         return $this->country;
     }
 
-    public function setReceived(int $received) {
-        return $this->received = $received;
+    public function setReceived(string $received) {
+        return $this->received = preg_replace('/[^0-9]/', '', $received);
     }
 
     public function getReceived(): ?int {

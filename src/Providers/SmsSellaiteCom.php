@@ -11,12 +11,13 @@ class SmsSellaiteCom extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//table[@class="up"]') AS $i => $node) {
-            $number     = new Number();
+            $number = new Number();
+            $nodes  = $node->getElementsByTagName('tr');
 
-            $number->setPhone($node->firstChild->firstChild->textContent);
-            $number->setCountry($node->firstChild->nextSibling->firstChild->nextSibling->textContent);
-            $number->setUrl(self::URL.$node->firstChild->firstChild->nextSibling->nextSibling->lastChild->lastChild->lastChild->getAttribute('href'));
-            $number->setReceived($node->firstChild->nextSibling->nextSibling->nextSibling->lastChild->lastChild->lastChild->textContent);
+            $number->setPhone($nodes->item(0)->textContent);
+            $number->setCountry($nodes->item(1)->getElementsByTagName('td')->item(1)->textContent);
+            $number->setUrl(self::URL.$nodes->item(0)->getElementsByTagName('a')->item(0)->getAttribute('href'));
+            $number->setReceived($nodes->item(3)->textContent);
 
             $data[] = $number;
         }

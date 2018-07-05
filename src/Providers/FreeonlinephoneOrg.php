@@ -12,11 +12,12 @@ class FreeonlinephoneOrg extends Provider implements ProviderInterface {
         /** @var \DOMElement $node */
         foreach ($xpath->query('//div[@class="inner-page row-fluid"][@id="num"]') AS $i => $node) {
             $number = new Number();
+            $ex     = explode('-', $node->getElementsByTagName('div')->item(1)->textContent);
 
-            $number->setPhone($node->childNodes->item(1)->firstChild->nextSibling->textContent);
-            $number->setCountry($node->childNodes->item(1)->firstChild->nextSibling->firstChild->firstChild->getAttribute('title'));
-            $number->setUrl($node->childNodes->item(1)->firstChild->nextSibling->getAttribute('href'));
-            $number->setReceived($node->childNodes->item(3)->firstChild->nextSibling->textContent);
+            $number->setPhone($node->getElementsByTagName('a')->item(0)->textContent);
+            $number->setCountry($ex[0]);
+            $number->setUrl($node->getElementsByTagName('a')->item(0)->getAttribute('href'));
+            $number->setReceived($node->getElementsByTagName('div')->item(1)->textContent);
 
             $data[] = $number;
         }

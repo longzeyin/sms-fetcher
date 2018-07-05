@@ -11,14 +11,12 @@ class GetfreesmsnumberCom extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//div[@class="nostyle"]') AS $i => $node) {
-            $country    = $node->firstChild->nextSibling->nextSibling;
-            $phone      = $country->nextSibling->nextSibling;
-            $url        = $phone->nextSibling->nextSibling;
-            $number     = new Number();
+            $number = new Number();
 
-            $number->setPhone($phone->textContent);
-            $number->setCountry($country->textContent);
-            $number->setUrl(self::URL.$url->getAttribute('href'));
+            $number->setPhone($node->textContent);
+            $number->setUrl(self::URL.$node->getElementsByTagName('a')->item(0)->getAttribute('href'));
+            $node->removeChild($node->getElementsByTagName('a')->item(0));
+            $number->setCountry($node->textContent);
 
             $data[] = $number;
         }

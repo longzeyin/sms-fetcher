@@ -2,4 +2,4 @@
 
 $fetcher = new \SMSFetcher\Client();
 
-die(var_dump($fetcher->getProvider('receive-a-sms.com')->getNumbers()));
+die(var_dump($fetcher->getProvider('sms.sellaite.com')->getNumbers()));

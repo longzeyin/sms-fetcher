@@ -13,9 +13,9 @@ class ReceiveSmsCom extends Provider implements ProviderInterface {
         foreach ($xpath->query('//table[@class="table table-condensed"]//tbody//tr') AS $i => $node) {
             $number = new Number();
 
-            $number->setPhone($node->childNodes->item(0)->firstChild->childNodes->item(1)->textContent);
-            $number->setCountry(preg_replace('/[^A-Za-z]/', '', $node->childNodes->item(2)->textContent));
-            $number->setUrl(self::URL.$node->childNodes->item(0)->firstChild->childNodes->item(1)->getAttribute('href'));
+            $number->setPhone($node->textContent);
+            $number->setCountry($node->textContent);
+            $number->setUrl(self::URL.$node->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             $data[] = $number;
         }

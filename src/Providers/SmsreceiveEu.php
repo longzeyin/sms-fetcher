@@ -11,15 +11,13 @@ class SmsreceiveEu extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//a[@class="free-sms-block"]') AS $i => $node) {
-            $country    = $node->firstChild->nextSibling->firstChild->nextSibling->nextSibling->nextSibling;
-            $phone      = $country->nextSibling->nextSibling;
-            $received   = $phone->nextSibling->nextSibling->lastChild->textContent;
-            $number     = new Number();
+            $number = new Number();
+            $nodes  = $node->getElementsByTagName('p');
 
-            $number->setPhone($phone->textContent);
-            $number->setCountry($country->textContent);
+            $number->setPhone($nodes->item(2)->textContent);
+            $number->setCountry($nodes->item(1)->textContent);
             $number->setUrl(self::URL.$node->getAttribute('href'));
-            $number->setReceived($received);
+            $number->setReceived($nodes->item(3)->textContent);
 
             $data[] = $number;
         }

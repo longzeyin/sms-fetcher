@@ -3,7 +3,7 @@
 use SMSFetcher\Types\Number;
 
 class ReceiveASmsCom extends Provider implements ProviderInterface {
-    const URL = 'receive-a-sms.com';
+    const URL = 'https://www.receive-a-sms.com';
 
     public function getNumbers() {
         $xpath  = $this->getXpath(self::URL);
@@ -13,9 +13,9 @@ class ReceiveASmsCom extends Provider implements ProviderInterface {
         foreach ($xpath->query('//table[@id="maintable"]//table[@align="center"]//tbody//td') AS $i => $node) {
             $number = new Number();
 
-            $number->setPhone($node->childNodes->item(3)->textContent);
-            $number->setCountry($node->childNodes->item(1)->textContent);
-            $number->setUrl(self::URL.$node->childNodes->item(1)->childNodes->item(1)->getAttribute('href'));
+            $number->setPhone($node->textContent);
+            $number->setCountry($node->textContent);
+            $number->setUrl(self::URL.$node->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             $data[] = $number;
         }

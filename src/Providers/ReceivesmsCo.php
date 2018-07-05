@@ -11,11 +11,12 @@ class ReceivesmsCo extends Provider implements ProviderInterface {
 
         /** @var \DOMElement $node */
         foreach ($xpath->query('//table[@class="table table-hover sortable"]//tbody//tr') AS $i => $node) {
-            $number     = new Number();
+            $number = new Number();
+            $nodes  = $node->getElementsByTagName('td');
 
-            $number->setPhone($node->childNodes->item(4)->textContent);
-            $number->setCountry($node->childNodes->item(2)->textContent);
-            $number->setUrl(self::URL.$node->childNodes->item(8)->lastChild->getAttribute('href'));
+            $number->setPhone($nodes->item(2)->textContent);
+            $number->setCountry($nodes->item(1)->textContent);
+            $number->setUrl(self::URL.$nodes->item(4)->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             $data[] = $number;
         }
