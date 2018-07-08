@@ -13,7 +13,7 @@ Add this line to your application's composer.json:
 ```json
 {
     "require": {
-        "stajor/sms-fetcher": "^1.0"
+        "stajor/sms-fetcher": "^1.1"
     }
 }
 ```
