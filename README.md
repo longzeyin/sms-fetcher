@@ -51,6 +51,7 @@ $provider->getNumbers();
 * sms.sellaite.com
 * receive-sms.com
 * receive-a-sms.com
+* smstibo.com
 
 ## Contributing
 
