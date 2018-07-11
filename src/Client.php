@@ -19,6 +19,7 @@ use SMSFetcher\Providers\SmsreceiveEu;
 use SMSFetcher\Providers\SmsreceiveonlineCom;
 use SMSFetcher\Providers\SmsSellaiteCom;
 use SMSFetcher\Providers\Smstibo;
+use SMSFetcher\Providers\UgotsmsCom;
 
 class Client {
     protected $providers = [
@@ -38,6 +39,7 @@ class Client {
         'catchsms.com'              => CatchsmsCom::class,
         'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
         'smslisten.com'             => SmslistenCom::class,
+        'ugotsms.com'               => UgotsmsCom::class,
 
         'receivesms.co'             => ReceivesmsCo::class,
         '7sim.net'                  => SevenSim::class
