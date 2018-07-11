@@ -54,6 +54,9 @@ $provider->getNumbers();
 * smstibo.com
 * smsnumbersonline.com
 * 7sim.net
+* receivesmsnumber.com
+* freesmscode.com
+* catchsms.com
 
 ## Contributing
 

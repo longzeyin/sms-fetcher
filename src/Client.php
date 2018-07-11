@@ -1,5 +1,6 @@
 <?php namespace SMSFetcher;
 
+use SMSFetcher\Providers\CatchsmsCom;
 use SMSFetcher\Providers\FreeonlinephoneOrg;
 use SMSFetcher\Providers\FreesmscodeCom;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
@@ -32,6 +33,7 @@ class Client {
         'smsnumbersonline.com'      => SmsnumbersonlineCom::class,
         'receivesmsnumber.com'      => ReceivesmsnumberCom::class,
         'freesmscode.com'           => FreesmscodeCom::class,
+        'catchsms.com'              => CatchsmsCom::class,
 
         'receivesms.co'             => ReceivesmsCo::class,
         '7sim.net'                  => SevenSim::class
