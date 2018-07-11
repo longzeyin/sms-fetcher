@@ -8,6 +8,7 @@ use SMSFetcher\Providers\ReceivesmsCo;
 use SMSFetcher\Providers\ReceiveSmsCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
+use SMSFetcher\Providers\SevenSim;
 use SMSFetcher\Providers\SmsnumbersonlineCom;
 use SMSFetcher\Providers\SmsOnlineCo;
 use SMSFetcher\Providers\SmsreceiveEu;
@@ -28,7 +29,8 @@ class Client {
         'smstibo.com'               => Smstibo::class,
         'smsnumbersonline.com'      => SmsnumbersonlineCom::class,
 
-        'receivesms.co'             => ReceivesmsCo::class
+        'receivesms.co'             => ReceivesmsCo::class,
+        '7sim.net'                  => SevenSim::class
     ];
 
     public function getProviders(): array {

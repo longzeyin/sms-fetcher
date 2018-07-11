@@ -53,6 +53,7 @@ $provider->getNumbers();
 * receive-a-sms.com
 * smstibo.com
 * smsnumbersonline.com
+* 7sim.net
 
 ## Contributing
 
