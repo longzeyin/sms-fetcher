@@ -2,4 +2,4 @@
 
 $fetcher = new \SMSFetcher\Client();
 
-die(var_dump($fetcher->getProvider('7sim.net')->getNumbers()));
+die(var_dump($fetcher->getProvider('receivesmsnumber.com')->getNumbers()));
