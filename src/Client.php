@@ -8,6 +8,7 @@ use SMSFetcher\Providers\ReceivesmsCo;
 use SMSFetcher\Providers\ReceiveSmsCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineCom;
 use SMSFetcher\Providers\ReceiveSmsOnlineInfo;
+use SMSFetcher\Providers\SmsnumbersonlineCom;
 use SMSFetcher\Providers\SmsOnlineCo;
 use SMSFetcher\Providers\SmsreceiveEu;
 use SMSFetcher\Providers\SmsSellaiteCom;
@@ -25,6 +26,7 @@ class Client {
         'receive-sms.com'           => ReceiveSmsCom::class,
         'receive-a-sms.com'         => ReceiveASmsCom::class,
         'smstibo.com'               => Smstibo::class,
+        'smsnumbersonline.com'      => SmsnumbersonlineCom::class,
 
         'receivesms.co'             => ReceivesmsCo::class
     ];
