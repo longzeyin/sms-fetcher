@@ -58,6 +58,7 @@ $provider->getNumbers();
 * freesmscode.com
 * catchsms.com
 * smsreceiveonline.com
+* smslisten.com
 
 ## Contributing
 
