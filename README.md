@@ -60,6 +60,7 @@ $provider->getNumbers();
 * smsreceiveonline.com
 * smslisten.com
 * ugotsms.com
+* smsreceiving.com
 
 ## Contributing
 
