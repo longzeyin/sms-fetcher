@@ -61,6 +61,7 @@ $provider->getNumbers();
 * smslisten.com
 * ugotsms.com
 * smsreceiving.com
+* freephonenum.com
 
 ## Contributing
 

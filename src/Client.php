@@ -2,6 +2,7 @@
 
 use SMSFetcher\Providers\CatchsmsCom;
 use SMSFetcher\Providers\FreeonlinephoneOrg;
+use SMSFetcher\Providers\FreephonenumCom;
 use SMSFetcher\Providers\FreesmscodeCom;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
 use SMSFetcher\Providers\ProviderInterface;
@@ -43,6 +44,7 @@ class Client {
         'ugotsms.com'               => UgotsmsCom::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
 
+        'freephonenum.com'          => FreephonenumCom::class,
         'receivesms.co'             => ReceivesmsCo::class,
         '7sim.net'                  => SevenSim::class
     ];
