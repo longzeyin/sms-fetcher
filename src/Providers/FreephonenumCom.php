@@ -22,6 +22,10 @@ class FreephonenumCom extends Provider implements ProviderInterface {
                     $div->removeChild($span);
                 }
 
+                foreach ($div->getElementsByTagName('span') AS $span) {
+                    $div->removeChild($span);
+                }
+
                 $number = new Number();
 
                 $number->setPhone($div->textContent);
