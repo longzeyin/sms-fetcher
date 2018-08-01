@@ -2,4 +2,4 @@
 
 $fetcher = new \SMSFetcher\Client();
 
-die(var_dump($fetcher->getProvider('smsplaza.io')->getNumbers()));
+die(var_dump($fetcher->getProvider('onlinesim.ru')->getNumbers()));

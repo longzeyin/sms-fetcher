@@ -5,6 +5,7 @@ use SMSFetcher\Providers\FreeonlinephoneOrg;
 use SMSFetcher\Providers\FreephonenumCom;
 use SMSFetcher\Providers\FreesmscodeCom;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
+use SMSFetcher\Providers\OnlinesimRu;
 use SMSFetcher\Providers\ProviderInterface;
 use SMSFetcher\Providers\ReceiveASmsCom;
 use SMSFetcher\Providers\ReceivesmsCo;
@@ -45,6 +46,7 @@ class Client {
         'ugotsms.com'               => UgotsmsCom::class,
         'smsplaza.io'               => SmsplazaIo::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
+        'onlinesim.ru'              => OnlinesimRu::class,
 
         'freephonenum.com'          => FreephonenumCom::class,
         'receivesms.co'             => ReceivesmsCo::class,
