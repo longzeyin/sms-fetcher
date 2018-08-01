@@ -26,7 +26,7 @@ class Number {
         $this->country = trim(preg_replace('/[^\sA-Za-z]/', '', $country));
     }
 
-    public function getCountry(): string {
+    public function getCountry(): ?string {
         return $this->country;
     }
 
