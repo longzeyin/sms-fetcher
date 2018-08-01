@@ -16,6 +16,7 @@ use SMSFetcher\Providers\SevenSim;
 use SMSFetcher\Providers\SmslistenCom;
 use SMSFetcher\Providers\SmsnumbersonlineCom;
 use SMSFetcher\Providers\SmsOnlineCo;
+use SMSFetcher\Providers\SmsplazaIo;
 use SMSFetcher\Providers\SmsreceiveEu;
 use SMSFetcher\Providers\SmsreceiveonlineCom;
 use SMSFetcher\Providers\SmsreceivingCom;
@@ -42,6 +43,7 @@ class Client {
         'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
         'smslisten.com'             => SmslistenCom::class,
         'ugotsms.com'               => UgotsmsCom::class,
+        'smsplaza.io'               => SmsplazaIo::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
 
         'freephonenum.com'          => FreephonenumCom::class,
