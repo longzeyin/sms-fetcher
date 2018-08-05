@@ -2,8 +2,10 @@
 
 use SMSFetcher\Providers\CatchsmsCom;
 use SMSFetcher\Providers\FreeonlinephoneOrg;
+use SMSFetcher\Providers\FreephonenumCom;
 use SMSFetcher\Providers\FreesmscodeCom;
 use SMSFetcher\Providers\GetfreesmsnumberCom;
+use SMSFetcher\Providers\OnlinesimRu;
 use SMSFetcher\Providers\ProviderInterface;
 use SMSFetcher\Providers\ReceiveASmsCom;
 use SMSFetcher\Providers\ReceivesmsCo;
@@ -15,6 +17,7 @@ use SMSFetcher\Providers\SevenSim;
 use SMSFetcher\Providers\SmslistenCom;
 use SMSFetcher\Providers\SmsnumbersonlineCom;
 use SMSFetcher\Providers\SmsOnlineCo;
+use SMSFetcher\Providers\SmsplazaIo;
 use SMSFetcher\Providers\SmsreceiveEu;
 use SMSFetcher\Providers\SmsreceiveonlineCom;
 use SMSFetcher\Providers\SmsreceivingCom;
@@ -41,8 +44,11 @@ class Client {
         'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
         'smslisten.com'             => SmslistenCom::class,
         'ugotsms.com'               => UgotsmsCom::class,
+        'smsplaza.io'               => SmsplazaIo::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
+        'onlinesim.ru'              => OnlinesimRu::class,
 
+        'freephonenum.com'          => FreephonenumCom::class,
         'receivesms.co'             => ReceivesmsCo::class,
         '7sim.net'                  => SevenSim::class
     ];

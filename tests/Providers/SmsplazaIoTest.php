@@ -2,11 +2,11 @@
 
 use PHPUnit\Framework\TestCase;
 use SMSFetcher\Client;
-use SMSFetcher\Providers\ReceiveSmsOnlineCom;
+use SMSFetcher\Providers\SmsplazaIo;
 use SMSFetcher\Types\Number;
 
-class ReceiveSmsOnlineComTest extends TestCase {
-    protected static $name = 'receive-sms-online.com';
+class SmsplazaIoTest extends TestCase {
+    protected static $name = 'smsplaza.io';
     protected static $provider;
     protected static $client;
     protected static $numbers;
@@ -19,11 +19,11 @@ class ReceiveSmsOnlineComTest extends TestCase {
 
     public function testInListProviders() {
         $this->assertArrayHasKey(self::$name, self::$client->getProviders());
-        $this->assertEquals(self::$client->getProviders()[self::$name], ReceiveSmsOnlineCom::class);
+        $this->assertEquals(self::$client->getProviders()[self::$name], SmsplazaIo::class);
     }
 
     public function testHasProviderInstance() {
-        $this->assertInstanceOf(ReceiveSmsOnlineCom::class, self::$provider);
+        $this->assertInstanceOf(SmsplazaIo::class, self::$provider);
     }
 
     public function testProviderGetters() {
