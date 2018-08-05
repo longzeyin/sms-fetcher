@@ -40,6 +40,6 @@ class SmsreceiveEuTest extends TestCase {
         $this->assertNotEmpty($number->getCountry());
         $this->assertNotEmpty($number->getPhone());
         $this->assertNotEmpty($number->getUrl());
-        $this->assertGreaterThan(0, $number->getReceived());
+        $this->assertGreaterThanOrEqual(0, $number->getReceived());
     }
 }
