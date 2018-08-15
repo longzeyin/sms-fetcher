@@ -43,7 +43,7 @@ class Client {
         'catchsms.com'              => CatchsmsCom::class,
         'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
         'smslisten.com'             => SmslistenCom::class,
-        'ugotsms.com'               => UgotsmsCom::class,
+//        'ugotsms.com'               => UgotsmsCom::class,
         'smsplaza.io'               => SmsplazaIo::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
         'onlinesim.ru'              => OnlinesimRu::class,
