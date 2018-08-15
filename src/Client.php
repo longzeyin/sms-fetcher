@@ -29,7 +29,7 @@ class Client {
     protected $providers = [
         'receive-sms-online.info'   => ReceiveSmsOnlineInfo::class,
         'getfreesmsnumber.com'      => GetfreesmsnumberCom::class,
-        'smsreceive.eu'             => SmsreceiveEu::class,
+//        'smsreceive.eu'             => SmsreceiveEu::class,
         'sms-online.co'             => SmsOnlineCo::class,
         'receive-sms-online.com'    => ReceiveSmsOnlineCom::class,
         'freeonlinephone.org'       => FreeonlinephoneOrg::class,

@@ -12,6 +12,7 @@ class SmsreceiveEuTest extends TestCase {
     protected static $numbers;
 
     public static function setUpBeforeClass() {
+        self::markTestSkipped('Last request error was 300');
         self::$client   = new Client();
         self::$provider = self::$client->getProvider(self::$name);
         self::$numbers  = self::$provider->getNumbers();
