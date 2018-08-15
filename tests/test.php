@@ -2,4 +2,4 @@
 
 $fetcher = new \SMSFetcher\Client();
 
-die(var_dump($fetcher->getProvider('smsreceiving.com')->getNumbers()));
+die(var_dump($fetcher->getProvider('freephonenum.com')->getNumbers()));

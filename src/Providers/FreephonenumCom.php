@@ -10,27 +10,22 @@ class FreephonenumCom extends Provider implements ProviderInterface {
         $data   = [];
 
         /** @var \DOMElement $node */
-        foreach ($xpath->query('//div[@class="icons-media-container mbr-white"]//div[contains(@class, "card")]') AS $i => $node) {
+        foreach ($xpath->query('//div[@class="row d-flex justify-content-center"]//div[@class="col-lg-3"]') AS $i => $node) {
             $country    = $node->getElementsByTagName('a')->item(0)->textContent;
             $xpathNode  = $this->getXpath($node->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             /** @var \DOMElement $subNode */
-            foreach ($xpathNode->query('//div[@class="numbers"]//li') AS $subNode) {
-                $div = $subNode->getElementsByTagName('a')->item(0)->getElementsByTagName('div')->item(1);
+            foreach ($xpathNode->query('//div[@class="row d-flex justify-content-center"]//div[@class="col-lg-3"]') AS $subNode) {
+                $a = $subNode->getElementsByTagName('a')->item(0);
 
-                foreach ($div->getElementsByTagName('span') AS $span) {
-                    $div->removeChild($span);
-                }
-
-                foreach ($div->getElementsByTagName('span') AS $span) {
-                    $div->removeChild($span);
+                if (is_null($a)) {
+                    continue;
                 }
 
                 $number = new Number();
-
-                $number->setPhone($div->textContent);
+                $number->setPhone($a->getElementsByTagName('div')->item(0)->textContent);
                 $number->setCountry($country);
-                $number->setUrl(self::URL.$subNode->getElementsByTagName('a')->item(0)->getAttribute('href'));
+                $number->setUrl(self::URL.$a->getAttribute('href'));
 
                 $data[] = $number;
             }
