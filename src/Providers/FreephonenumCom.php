@@ -29,6 +29,8 @@ class FreephonenumCom extends Provider implements ProviderInterface {
 
                 $data[] = $number;
             }
+
+            sleep(1);
         }
 
         return $data;
