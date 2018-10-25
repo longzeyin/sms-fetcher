@@ -41,7 +41,7 @@ class Client {
         'receivesmsnumber.com'      => ReceivesmsnumberCom::class,
         'freesmscode.com'           => FreesmscodeCom::class,
         'catchsms.com'              => CatchsmsCom::class,
-        'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
+//        'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
         'smslisten.com'             => SmslistenCom::class,
 //        'ugotsms.com'               => UgotsmsCom::class,
         'smsplaza.io'               => SmsplazaIo::class,
