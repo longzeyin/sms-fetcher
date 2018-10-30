@@ -38,7 +38,7 @@ class Client {
         'receive-a-sms.com'         => ReceiveASmsCom::class,
         'smstibo.com'               => Smstibo::class,
         'smsnumbersonline.com'      => SmsnumbersonlineCom::class,
-        'receivesmsnumber.com'      => ReceivesmsnumberCom::class,
+//        'receivesmsnumber.com'      => ReceivesmsnumberCom::class,
         'freesmscode.com'           => FreesmscodeCom::class,
         'catchsms.com'              => CatchsmsCom::class,
 //        'smsreceiveonline.com'      => SmsreceiveonlineCom::class,
