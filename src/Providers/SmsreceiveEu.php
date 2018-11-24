@@ -3,21 +3,20 @@
 use SMSFetcher\Types\Number;
 
 class SmsreceiveEu extends Provider implements ProviderInterface {
-    const URL = 'https://smsreceive.eu/en/';
+    const URL = 'https://smsreceive.eu';
 
     public function getNumbers() {
-        $xpath  = $this->getXpath(self::URL.'freesms');
+        $xpath  = $this->getXpath(self::URL);
         $data   = [];
 
         /** @var \DOMElement $node */
-        foreach ($xpath->query('//a[@class="free-sms-block"]') AS $i => $node) {
-            $number = new Number();
-            $nodes  = $node->getElementsByTagName('p');
+        foreach ($xpath->query('//div[@class="row numbers"]//div[@class="card"]') AS $i => $node) {
+            $number     = new Number();
+            $country    = explode('-', $node->getElementsByTagName('span')->item(0)->getAttribute('class'));
 
-            $number->setPhone($nodes->item(2)->textContent);
-            $number->setCountry($nodes->item(1)->textContent);
-            $number->setUrl(self::URL.$node->getAttribute('href'));
-            $number->setReceived($nodes->item(3)->textContent);
+            $number->setPhone($node->getElementsByTagName('h5')->item(0)->textContent);
+            $number->setCountry(end($country));
+            $number->setUrl($node->getElementsByTagName('a')->item(0)->getAttribute('href'));
 
             $data[] = $number;
         }

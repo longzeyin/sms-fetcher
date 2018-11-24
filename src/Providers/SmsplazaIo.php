@@ -3,12 +3,14 @@
 use SMSFetcher\Types\Number;
 
 class SmsplazaIo extends Provider implements ProviderInterface {
-    const URL = 'https://sonetc.smsplaza.io/free/sms';
+    const URL = 'https://smsplaza.io';
 
     public function getNumbers() {
-        $response = json_decode($this->request(self::URL)->getBody(), true);
+        $xpath  = $this->getXpath(self::URL);
+        $data   = [];
+        $rows   = json_decode($xpath->query('//input[@id="freeSms"]')->item(0)->getAttribute('value'), true);
 
-        foreach ($response AS $row) {
+        foreach ($rows AS $row) {
             $number = new Number();
 
             $number->setPhone($row['number']);

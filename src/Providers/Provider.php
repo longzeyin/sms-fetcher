@@ -9,11 +9,16 @@ class Provider {
         $client = new Client(['cookies' => true]);
         $faker  = Factory::create();
 
-        return $client->get($url, ['headers' => [
-            'User-Agent'    => $faker->userAgent,
-//            'Accept'        => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language' => 'en-us'
-        ]]);
+        return $client->get($url, [
+            'timeout'           => 5,
+            'connect_timeout'   => 5,
+            'read_timeout'      => 5,
+            'headers'           => [
+                'User-Agent'    => $faker->userAgent,
+//              'Accept'        => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language' => 'en-us'
+            ]
+        ]);
     }
 
     protected function getXpath($url): \DOMXPath {

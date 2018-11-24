@@ -48,18 +48,15 @@ $provider->getNumbers();
 * sms-online.co
 * receive-sms-online.com
 * freeonlinephone.org
-* sms.sellaite.com
 * receive-sms.com
 * receive-a-sms.com
 * smstibo.com
 * smsnumbersonline.com
 * 7sim.net
-* receivesmsnumber.com
 * freesmscode.com
 * catchsms.com
 * smsreceiveonline.com
 * smslisten.com
-* ugotsms.com
 * smsreceiving.com
 * freephonenum.com
 
