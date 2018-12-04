@@ -44,7 +44,6 @@ class Client {
         'smsplaza.io'               => SmsplazaIo::class,
         'smsreceiving.com'          => SmsreceivingCom::class,
         'onlinesim.ru'              => OnlinesimRu::class,
-
         'freephonenum.com'          => FreephonenumCom::class,
         'receivesms.co'             => ReceivesmsCo::class,
         '7sim.net'                  => SevenSim::class

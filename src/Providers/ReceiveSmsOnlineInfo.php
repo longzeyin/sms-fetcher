@@ -1,5 +1,6 @@
 <?php namespace SMSFetcher\Providers;
 
+use SMSFetcher\Types\Message;
 use SMSFetcher\Types\Number;
 
 class ReceiveSmsOnlineInfo extends Provider implements ProviderInterface {
@@ -22,6 +23,23 @@ class ReceiveSmsOnlineInfo extends Provider implements ProviderInterface {
             $number->setCountry($node->textContent);
 
             $data[] = $number;
+        }
+
+        return $data;
+    }
+
+    public function getMessages(Number $number) {
+        $data       = [];
+        $response   = $this->request(self::URL.'load_messages.php?phone='.$number->getPhone(), [
+            'Referer' => $number->getUrl(),
+        ]);
+
+        foreach (json_decode($response->getBody(), true) AS $row) {
+            $message = new Message();
+            $message->setFrom($row['telefon_id']);
+            $message->setContent($row['mesaj']);
+
+            $data[] = $message;
         }
 
         return $data;

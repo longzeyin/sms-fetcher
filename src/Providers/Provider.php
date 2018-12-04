@@ -5,7 +5,7 @@ use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 
 class Provider {
-    protected function request(string $url): ResponseInterface {
+    protected function request(string $url, $headers = []): ResponseInterface {
         $client = new Client(['cookies' => true]);
         $faker  = Factory::create();
 
@@ -13,11 +13,11 @@ class Provider {
             'timeout'           => 5,
             'connect_timeout'   => 5,
             'read_timeout'      => 5,
-            'headers'           => [
+            'headers'           => array_merge([
                 'User-Agent'    => $faker->userAgent,
 //              'Accept'        => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
                 'Accept-Language' => 'en-us'
-            ]
+            ], $headers)
         ]);
     }
 

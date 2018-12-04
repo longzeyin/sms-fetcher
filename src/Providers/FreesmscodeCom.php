@@ -22,4 +22,8 @@ class FreesmscodeCom extends Provider implements ProviderInterface {
 
         return $data;
     }
+
+    public function getMessages(Number $number) {
+        return [];
+    }
 }
